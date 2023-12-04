@@ -2,15 +2,12 @@ package me.drigster.todo.Models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-
 import jakarta.validation.constraints.NotEmpty;
 
 @Table("TODOS")
 public class Todo {
 
-    @Id @JsonInclude
+    @Id
     private Integer id;
     @NotEmpty
     private String text;
@@ -18,7 +15,9 @@ public class Todo {
     private Integer createdAt;
     private Integer updatedAt;
 
-    public Todo() { }
+    public Integer getId() {
+        return this.id;
+    }
 
     public String getText() {
         return text;
