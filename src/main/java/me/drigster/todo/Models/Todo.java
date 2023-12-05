@@ -20,23 +20,23 @@ public class Todo {
     }
 
     public String getText() {
-        return text;
+        return this.text;
     }
 
     public void setText(String text) {
         this.text = text;
     }
 
-    public Boolean getDone() {
-        return isDone;
+    public Boolean getIsDone() {
+        return this.isDone;
     }
 
-    public void setDone(Boolean done) {
-        isDone = done;
+    public void setIsDone(Boolean isDone) {
+        this.isDone = isDone;
     }
 
     public Integer getCreatedAt() {
-        return createdAt;
+        return this.createdAt;
     }
 
     public void setCreatedAt(Integer createdAt) {
@@ -44,10 +44,11 @@ public class Todo {
     }
 
     public Integer getUpdatedAt() {
-        return updatedAt;
+        return this.updatedAt;
     }
 
     public void setUpdatedAt(Integer updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }
