@@ -56,4 +56,28 @@ public class IndexController {
     public void delete(@PathVariable Integer id) {
         todoService.removeById(id);
     }
+
+    @GetMapping("/todo/{id}/done")
+    public void markDone(@PathVariable Integer id) {
+        Todo todo = todoService.getById(id);
+
+        if(todo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        todo.setIsDone(true);
+        todoService.update(todo);
+    }
+
+    @GetMapping("/todo/{id}/undo")
+    public void markUnDone(@PathVariable Integer id) {
+        Todo todo = todoService.getById(id);
+
+        if(todo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        todo.setIsDone(false);
+        todoService.update(todo);
+    }
 }
